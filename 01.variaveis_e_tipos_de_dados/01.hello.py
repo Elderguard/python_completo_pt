@@ -1,0 +1,8 @@
+"""COMENTARIO 
+EM
+DIVERSAS
+LINHAS"""
+
+
+#COMENTARIO EM LINHA
+print("Ola Mundo!")
