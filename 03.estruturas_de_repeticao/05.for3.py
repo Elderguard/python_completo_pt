@@ -20,3 +20,8 @@ for x in range(2, 10, 5):
 #executará a cada 1 repetição
 for x in range(0, 6, 1): #o mesmo resultado que range(6)
     print(x)
+
+# Uma característica extra do for em python é que é possível fazer a contagem reversa facilmente, definindo o valor inicial, a posição final e o intervalo, este último devendo ser um valor negativo.
+
+for x in range(10, 0, -1):
+    print(x)
