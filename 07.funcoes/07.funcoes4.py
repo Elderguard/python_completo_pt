@@ -2,7 +2,7 @@ def ola_mundo():
     print('ola mundo')
 
 
-def executar(): 
+def executar(): #recomenda-se utilizar verbos para o nome de funções.
     ola_mundo() #É possível ter uma função dentro de outra função. Ou uma função que chama múltiplas funções.
 
 
