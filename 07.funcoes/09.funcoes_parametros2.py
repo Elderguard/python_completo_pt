@@ -1,4 +1,4 @@
-#Parãmetros de uma função
+#Parâmetros de uma função
 
 def imprime_nome(nome):
     print(f"Olá, {nome}!")
