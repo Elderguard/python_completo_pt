@@ -1,40 +1,31 @@
-#Argumento Arbitrário *args
+#Kwargs
 
-#Neste exemplo, será utilizado um número de argumentos maior do que o número de parâmetros.
+"""
 
-# 3 parâmetros + *args
-def imprimir_imovel(nome_imovel,n_quartos,vagas_garagem=None, *args):
-    print(30*"-")
-    print('Título: ', nome_imovel)
-    print('Quartos: ', n_quartos)
-    if vagas_garagem != None: 
-        #somente executará se for definido o terceiro parâmetro
-        print('Vagas na garagem: ', vagas_garagem)
-        
+def imprimir_nomes(nomes):
+    print(nomes)
 
-#               4 argumentos
-imprimir_imovel("Loja Comercial", 2, 5, 'desconto') 
-#Nesse exemplo, os argumentos excedentes serão atribuídos *args, que não será impresso pois não há tal solicitação.
+imprimir_nomes(nomes='ana', sobrenomes='julia')
 
-# E se criarmos uma função apenas com argumentos arbitrários?
+No exemplo acima, o programa retornaria um erro, pois foram passados mais argumentos do que o que foi definido como parâmetro da função.
 
-def imprimir_nomes(*nomes):
-    print(30*"-")
+"""
+# Uma forma de contornar isso é com os KwArgs representados por **
+
+def imprimir_nomes(**nomes):
     print(nomes)
 
 
-imprimir_nomes('ana','beatriz', 'pedro', 'joão')
-#Note que a impressão do resultado deste código demonstra que foi criada uma TUPLA com os valores informados como argumentos.
+imprimir_nomes(nomes = 'ana', sobrenomes = 'julia')
+# Dessa forma é possível utilizar todos os argumentos informados, levando à criação de um DICIONÁRIO que será impresso.
 
-#Ou seja, o argumento arbitrário funciona como uma tupla.
+# Pode-se utilizar a impressão da seguinte forma:
+def imprimir_nomes(**nomes):
+    print(f'{nomes['nome']} {nomes['sobrenome']}')
 
-#O que acontece se criarmos uma lista e usarmos a lista como parâmetro?
+imprimir_nomes(nome = 'ana', sobrenome = 'julia')
 
-lista = ['ana', 'beatriz', 'pedro', 'joão']
-imprimir_nomes(lista)
-#Note que a impressão mostra que a lista inteira foi incluída dentro do primeiro item da TUPLA.
+# Ou ainda, declarando o dicionário anteriormente:
 
-#E se quisermos distribuir essa lista na tupla?
-#basta adicionar o asterístico antes do nome da lista.
-#Isso fará o DESEMPACOTAMENTO da lista.
-imprimir_nomes(*lista) 
+dicio = {'nome': 'ana', 'sobrenome': 'julia'}
+imprimir_nomes(nome = 'ana', sobrenome = 'julia')
